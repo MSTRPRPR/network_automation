@@ -1,6 +1,6 @@
 # network_automation
 
-A set of simple tools to speed up certain tasks
+A set of simple tools to speed up certain tasks on Cisco devices
 
 **ping.yml**
 
