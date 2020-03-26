@@ -1,0 +1,25 @@
+---
+
+- hosts: routers
+  gather_facts: false
+  become: no
+
+  vars_prompt:
+    - name: target_ip
+      prompt: Pleas specify target IP address
+      private: no
+  tasks:
+    - name: Ping target IP address
+      net_ping:
+        dest: "{{ target_ip }}"
+
+
+
+
+
+
+ 
+   
+     
+
+

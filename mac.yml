@@ -1,0 +1,25 @@
+---
+- hosts: all
+  gather_facts: no
+  vars_prompt:
+   - name: target_address
+     prompt: Specify address
+     private: no
+  tasks:
+   - name: Scan ARP tables
+     ios_command:
+       commands: 
+         - show arp | include  {{ target_address }} 
+     register: out
+
+   - name: Output result
+     debug: 
+       var: out.stdout
+     when: out is search( target_address )
+
+
+
+
+
+
+
